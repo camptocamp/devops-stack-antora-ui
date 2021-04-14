@@ -40,6 +40,12 @@ NOTE: The `snapshot` flag tells Antora to fetch the UI when the `--fetch` comman
 This setting is required because updates to the UI bundle are pushed to the same URL.
 If the URL were to be unique, this setting would not be required.
 
+The bundle includes a "doc search" feature based on https://github.com/Mogztter/antora-site-generator-lunr[antora-site-generator-lunr].
+You can generate your Antora-based site (with search bar and static search index file) with the following command:
+ 
+ $ antora-site-generator-lunr
+ $ DOCSEARCH_INDEX_VERSION=latest DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr antora-playbook.yml --to-dir docs/output --cache-dir=./.cache
+
 == Development Quickstart
 
 This section offers a basic tutorial to teach you how to set up the default UI project, preview it locally, and bundle it for use with Antora.
