@@ -4,7 +4,7 @@
   window.antora.pagePath = '{{@root.page.url}}'
 </script>
 <script src="{{{uiRootPath}}}/js/site.js"></script>
-{{#if (eq env.DOCSEARCH_ENGINE 'lunr')}}
+{{#if (eq env.DOCSEARCH_ENABLED 'true')}}
 <script src="{{uiRootPath}}/js/vendor/lunr.js"></script>
 <script src="{{uiRootPath}}/js/vendor/search.js"></script>
 <script async src="{{uiRootPath}}/../search-index.js"></script>

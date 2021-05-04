@@ -7,10 +7,10 @@
         <span></span>
         <span></span>
       </button>
-    </div>
+    </div>    
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-      {{#if env.DOCSEARCH_ENABLED}}
+      {{#if (eq env.DOCSEARCH_ENABLED 'true')}}
         <div class="navbar-item">
           <input id="search-input" type="text" placeholder="Search docs">
         </div>

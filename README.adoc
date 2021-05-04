@@ -48,7 +48,7 @@ For enabling this feature you need to `DOCSEARCH_ENABLED=true` when generating a
 You can generate your Antora-based site (with search bar and static search index file) with the following command:
  
  $ npm i -g antora-site-generator-lunr
- $ DOCSEARCH_INDEX_VERSION=latest DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr antora-playbook.yml --to-dir docs/output --cache-dir=./.cache
+ $ DOCSEARCH_INDEX_VERSION=latest DOCSEARCH_ENABLED=true NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr antora-playbook.yml --to-dir docs/output --cache-dir=./.cache
 
 == Development Quickstart
 
