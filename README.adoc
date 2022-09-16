@@ -25,6 +25,7 @@
 This repository is based and forked from the {url-project}[Antora default UI].
 
 The reason for this fork is so we could apply the following modifications:
+
 - customize the UI with the DevOps Stack logo, favicon and hyperlink to its website and repository, as well as to Camptocamp's website;
 - add support for Terraform syntax highlighting by adding this https://github.com/highlightjs/highlightjs-terraform[extension] of https://www.npmjs.com/package/highlight.js[highlight.js] (see https://highlightjs.readthedocs.io/en/latest/supported-languages.html[here] the supported languages);
 - provide more readable colors for the syntax highlighting by adding a link:./src/css/stackoverflow-colors.css[custom CSS file] with the same colors used by Stack Overflow (the https://highlightjs.org/download/[packaged prebuilt version of `highlight.js`] contains multiple CSS styles, but this package apparently is not directly usable by this UI project, however we can get the CSS style from there);
