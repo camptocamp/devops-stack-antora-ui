@@ -37,7 +37,7 @@ module.exports = (src, dest, preview) => () => {
       }),
     postcssUrl([
       {
-        filter: '**/~typeface-*/files/*',
+        filter: new RegExp('^src/css/[~][^/]*(?:font|face)[^/]*/.*/files/.+[.](?:ttf|woff2?)$'),
         url: (asset) => {
           const relpath = asset.pathname.substr(1)
           const abspath = require.resolve(relpath)
@@ -57,6 +57,8 @@ module.exports = (src, dest, preview) => () => {
   ]
 
   return merge(
+    vfs
+      .src('ui.yml', { ...opts, allowEmpty: true }),
     vfs
       .src('js/+([0-9])-*.js', { ...opts, sourcemaps })
       .pipe(uglify())
@@ -123,7 +125,8 @@ module.exports = (src, dest, preview) => () => {
     ),
     vfs.src('helpers/*.js', opts),
     vfs.src('layouts/*.hbs', opts),
-    vfs.src('partials/*.hbs', opts)
+    vfs.src('partials/*.hbs', opts),
+    vfs.src('static/**/*[!~]', { ...opts, base: ospath.join(src, 'static'), dot: true })
   ).pipe(vfs.dest(dest, { sourcemaps: sourcemaps && '.' }))
 }
 

@@ -171,6 +171,20 @@
   float: left;
 }
 
+.doc .float-gap.right {
+  margin: 0 1rem 1rem 0;
+}
+
+.doc .float-gap.left {
+  margin: 0 0 1rem 1rem;
+}
+
+.doc .float-group::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .doc .stretch {
   width: 100%;
 }
@@ -194,6 +208,7 @@
 .doc .literalblock,
 .doc .sidebarblock,
 .doc .verseblock,
+.doc .videoblock,
 .doc .quoteblock,
 .doc .partintro,
 .doc details,
@@ -392,10 +407,21 @@
   content: attr(title);
 }
 
-.doc .imageblock {
+.doc .imageblock,
+.doc .videoblock {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.doc .imageblock.text-left,
+.doc .videoblock.text-left {
+  align-items: flex-start;
+}
+
+.doc .imageblock.text-right,
+.doc .videoblock.text-right {
+  align-items: flex-end;
 }
 
 .doc .imageblock img,
@@ -412,6 +438,11 @@
 
 .doc .image:not(.left):not(.right) > img {
   margin-top: -0.2em;
+}
+
+.doc .videoblock iframe {
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 #preamble .abstract blockquote {
@@ -528,7 +559,7 @@
 }
 
 .doc ul.checklist {
-  padding-left: 0.5rem;
+  padding-left: 1.75rem;
 }
 
 .doc ul.checklist p > i.fa-check-square-o:first-child,
@@ -536,6 +567,7 @@
   display: inline-flex;
   justify-content: center;
   width: 1.25rem;
+  margin-left: -1.25rem;
 }
 
 .doc ul.checklist i.fa-check-square-o::before {
@@ -575,6 +607,7 @@
 .doc .literalblock .title,
 .doc .listingblock .title,
 .doc .openblock .title,
+.doc .videoblock .title,
 .doc .tableblock caption {
   color: var(--caption-font-color);
   font-size: calc(16 / var(--rem-base) * 1rem);
