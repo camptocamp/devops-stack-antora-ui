@@ -38,8 +38,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: "${{ github.ref_name }}-latest"
-        name: "Release ${{ github.ref_name }}-latest"
+        tag_name: "${{ github.ref_name }}-LATEST"
+        name: "Release ${{ github.ref_name }}-LATEST"
         body: |
           Release of the DevOps Stack's Antora UI `ui-bundle.zip` for ${{ github.ref_name }}
         draft: false
