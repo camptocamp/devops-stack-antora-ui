@@ -217,6 +217,26 @@
   margin: 1rem 0 0;
 }
 
+.doc .sect3 .paragraph,
+.doc .sect3 .dlist,
+.doc .sect3 .hdlist,
+.doc .sect3 .olist,
+.doc .sect3 .ulist,
+.doc .sect3 .exampleblock,
+.doc .sect3 .imageblock,
+.doc .sect3 .listingblock,
+.doc .sect3 .literalblock,
+.doc .sect3 .tabs,
+.doc .sect3 .sidebarblock,
+.doc .sect3 .verseblock,
+.doc .sect3 .videoblock,
+.doc .sect3 .quoteblock,
+.doc .sect3 .partintro,
+.doc .sect3 details,
+.doc .sect3 hr {
+  margin-left: 1em;
+}
+
 .doc table.tableblock {
   font-size: calc(15 / var(--rem-base) * 1rem);
 }
