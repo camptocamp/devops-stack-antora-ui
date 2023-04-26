@@ -1,5 +1,5 @@
 ---
-name: Create the ui-bundle.zip
+name: build-ui-bundle
 
 on:
   push:
