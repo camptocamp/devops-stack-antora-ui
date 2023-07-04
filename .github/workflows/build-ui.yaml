@@ -3,7 +3,7 @@ name: build-ui-bundle
 
 on:
   push:
-    branches: ["master", "devops-stack"]
+    branches: ["main", "devops-stack"]
 
 jobs:
   build:
