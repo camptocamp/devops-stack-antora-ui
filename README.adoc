@@ -46,7 +46,7 @@ Create you local branch synchronized with upstream.
 
 [source,bash,subs=attributes+]
 ----
-git checkout -b my-branch master
+git checkout -b my-branch main
 git merge upstream_master
 ----
 
