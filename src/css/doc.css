@@ -185,8 +185,32 @@
   clear: both;
 }
 
+.doc .text-left {
+  text-align: left;
+}
+
+.doc .text-center {
+  text-align: center;
+}
+
+.doc .text-right {
+  text-align: right;
+}
+
+.doc .text-justify {
+  text-align: justify;
+}
+
 .doc .stretch {
   width: 100%;
+}
+
+.doc .big {
+  font-size: larger;
+}
+
+.doc .small {
+  font-size: smaller;
 }
 
 .doc .underline {
@@ -237,10 +261,8 @@
   margin-left: 1em;
 }
 
-.doc table.tableblock {
-  font-size: calc(15 / var(--rem-base) * 1rem);
-}
-
+.doc > table.tableblock,
+.doc > table.tableblock + *,
 .doc .tablecontainer,
 .doc .tablecontainer + *,
 .doc :not(.tablecontainer) > table.tableblock,
@@ -248,8 +270,18 @@
   margin-top: 1.5rem;
 }
 
+.doc table.tableblock,
+.doc table.tableblock pre,
+.doc .admonitionblock pre {
+  font-size: calc(15 / var(--rem-base) * 1rem);
+}
+
 .doc p.tableblock + p.tableblock {
   margin-top: 0.5rem;
+}
+
+.doc td.tableblock > .content {
+  word-wrap: anywhere; /* aka overflow-wrap; used when hyphens are disabled or aren't sufficient */
 }
 
 .doc td.tableblock > .content > :first-child {
@@ -362,10 +394,6 @@
 .doc .admonitionblock td.content > :not(.title):first-child,
 .doc .admonitionblock td.content > .title + * {
   margin-top: 0;
-}
-
-.doc .admonitionblock pre {
-  font-size: calc(15 / var(--rem-base) * 1rem);
 }
 
 .doc .admonitionblock > table {
@@ -1014,6 +1042,10 @@
 .doc .nobreak {
   hyphens: none;
   word-wrap: normal;
+}
+
+.doc :not(pre).pre-wrap {
+  white-space: pre-wrap;
 }
 
 #footnotes {
